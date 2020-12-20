@@ -1,0 +1,42 @@
+a) Write a function to return the dot product of two vectors
+
+dotp(l1l2..ln, k1k2..kn) = { 
+                            0, n = 0
+                            l1 * k1 + dotp(l2..ln, k2..kn), otherwise
+                            }
+
+
+b) Write a function to return the maximum value of all the 
+numerical atoms of a list, at any level.
+
+max_total(l1l2..ln) = {
+                        -infinity, n = 0
+                        max(l1, max_total(l2..ln)), l1 is a number
+                        max(max_total(l1), max_total(l2..ln)), l1 is a list
+                        max_total(l2..ln), otherwise
+                        }
+
+
+c) Write a function to compute the result of an arithmetic 
+expression memorised in preorder on a stack
+
+
+expression(l1l2..ln) = {
+                        [], n = 0
+                        l2 (l1) l3, l1 is atom and l2,l3 are numbers
+                        l1 + expression(l2..ln), otherwise
+                        }
+
+solve(l1..ln) = {
+                 l1, n = 1
+                 solve(expresion(l1..ln)), otherwise
+                }
+
+d) Write a function to return T if a list has an even number
+ of elements on the first level, and NIL on the contrary case, without counting the elements of the list
+
+even(l1l2..ln) = {
+                  true, n = 0
+                  false, n = 1
+                  even(l3..ln), otherwise
+                }

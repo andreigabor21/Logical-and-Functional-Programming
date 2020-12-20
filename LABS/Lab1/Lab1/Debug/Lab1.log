@@ -1,0 +1,6 @@
+﻿  lista.cpp
+C:\Users\andre\OneDrive\Desktop\2nd YEAR\PLF\LABS\Lab1\Lab1\lista.h(15,2): warning C4091: 'typedef ': ignored on left of 'Nod' when no variable is declared
+  main.cpp
+C:\Users\andre\OneDrive\Desktop\2nd YEAR\PLF\LABS\Lab1\Lab1\lista.h(15,2): warning C4091: 'typedef ': ignored on left of 'Nod' when no variable is declared
+  Generating Code...
+  Lab1.vcxproj -> C:\Users\andre\OneDrive\Desktop\2nd YEAR\PLF\LABS\Lab1\Debug\Lab1.exe
