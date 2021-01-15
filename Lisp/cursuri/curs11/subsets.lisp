@@ -1,0 +1,16 @@
+(defun subsets(L)
+    (cond
+        ((null L) (list nil))
+        (T ((lambda (s)
+             (append s (mapcar #'(lambda (c) (cons (car L) c)) s))
+            )
+            (subsets (cdr L))
+            )
+        )
+    )
+)
+
+(trace mapcar)
+(trace cons)
+(trace subsets)
+(print (subsets '(1 2)))

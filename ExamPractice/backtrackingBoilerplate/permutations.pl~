@@ -1,0 +1,13 @@
+%Permutations
+%------------
+
+%del(N:number,L:list,R:result)
+del(H,[H|T],T).
+del(H,[H1|T],[H1|Res]):-
+    del(H,T,Res).
+
+%list_permutation(L:list,R:result)
+list_permutation([],[]).
+list_permutation(L,[X|P]):-
+    del(X,L,L1),
+    list_permutation(L1,P).

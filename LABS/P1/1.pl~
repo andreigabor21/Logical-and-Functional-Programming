@@ -1,0 +1,33 @@
+%a. Write a predicate to determine the lowest common multiple of a list
+% formed from integer numbers. gcd(A,0,R)
+
+gcd(A,0,A):-!.
+gcd(A,B,R):-
+    A1 is A mod B,
+    gcd(B,A1,R).
+
+
+lcm_list([],0):-!.
+lcm_list([H|[]],H):-!.
+lcm_list([H|T],R):-
+    lcm_list(T,R1),
+    gcd(H,R1,GCD),
+    R is H*R1/GCD.
+
+% b. Write a predicate to add a value v after 1-st, 2-nd, 4-th, 8-th, …
+% element in a list.
+
+%inserth(L:list,V:number,Pos:number,Idx:number,R:list)
+
+inserth([],_,_,_,[]):-!.
+inserth([H|T],V,Pos,Idx,[H,V|R]):-
+    Pos =:= Idx,
+    Pos1 is Pos*2,
+    Idx1 is Idx+1,
+    inserth(T,V,Pos1,Idx1,R).
+inserth([H|T],V,Pos,Idx,[H|R]):-
+    Pos =\= Idx,
+    Idx1 is Idx+1,
+    inserth(T,V,Pos,Idx1,R).
+
+insert(L,V,R):-inserth(L,V,0,0,R).

@@ -1,0 +1,20 @@
+%elim(L:list,K:number,C:contor,R:list)
+
+elim([],_,_,[]).
+elim([H|T],K,C,R):-
+    C=<K,
+    H mod 2 =:= 0,
+    !,
+    C1 is C+1,
+    elim(T,K,C1,R).
+elim([H|T],K,C,[H|R]):-
+    C=<K,
+    not(H mod 2 =:= 0),
+    !,
+    C1 is C+1,
+    elim(T,K,C1,R).
+elim([H|T],K,C,[H|R]):-
+    C>K,!,
+    elim(T,K,C,R).
+
+main(L,K,R):-elim(L,K,0,R).
